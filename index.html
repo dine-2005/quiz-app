@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz App</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"/>
+
+  <!-- External CSS file -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="card">
+
+    <!-- ========================
+         START SCREEN
+    ========================= -->
+    <div id="start-screen">
+      <div class="logo">🧠 QuizMe</div>
+      <p class="tagline">Test your general knowledge — 7 questions</p>
+      <button class="btn btn-primary" onclick="startQuiz()">Start Quiz</button>
+    </div>
+
+    <!-- ========================
+         QUIZ SCREEN
+    ========================= -->
+    <div id="quiz-screen">
+
+      <!-- Progress bar -->
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-fill" id="progress-bar"></div>
+      </div>
+
+      <!-- Question counter + score -->
+      <div class="q-header">
+        <span class="q-number" id="q-number">Question 1 of 7</span>
+        <span class="q-score" id="q-score">Score: 0</span>
+      </div>
+
+      <!-- Question text -->
+      <div class="question-text" id="question-text">Loading...</div>
+
+      <!-- Answer options (built by JS) -->
+      <div class="options" id="options-container"></div>
+
+      <!-- Feedback after answering -->
+      <div class="feedback" id="feedback"></div>
+
+      <!-- Next button -->
+      <button class="btn btn-primary" id="next-btn" onclick="nextQuestion()">
+        Next →
+      </button>
+    </div>
+
+    <!-- ========================
+         RESULT SCREEN
+    ========================= -->
+    <div id="result-screen">
+      <div class="result-emoji" id="result-emoji">🎉</div>
+      <div class="result-title">Quiz Complete!</div>
+      <div class="result-score" id="result-score">0 / 7</div>
+      <p class="result-message" id="result-message">Great job!</p>
+
+      <div class="result-details">
+        <div class="stat green">
+          <label>Correct</label>
+          <span id="stat-correct">0</span>
+        </div>
+        <div class="stat red">
+          <label>Wrong</label>
+          <span id="stat-wrong">0</span>
+        </div>
+        <div class="stat">
+          <label>Total</label>
+          <span>7</span>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" onclick="restartQuiz()">Play Again</button>
+      <button class="btn btn-outline" onclick="showStart()">← Home</button>
+    </div>
+
+  </div><!-- end .card -->
+
+  <!-- External JavaScript file (placed at bottom of body) -->
+  <script src="script (1).js"></script>
+
+</body>
+</html>
